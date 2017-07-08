@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-print '...loaded python test [now attempting to list GPUs]'
+print('...loaded python test [now attempting to list GPUs]')
 
 from tensorflow.python.client import device_lib
 
