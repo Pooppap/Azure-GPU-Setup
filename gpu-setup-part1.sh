@@ -10,7 +10,7 @@ mkdir -p $SETUP_DIR
 cd $SETUP_DIR
 
 # install python libraries
-sudo apt-get -y install python-numpy python-dev python-wheel python-mock python-matplotlib python-pip
+sudo apt-get -y install python3-numpy python3-dev python3-wheel python3-mock python3-matplotlib python3-pip
 
 # install cuda drivers
 if [ ! -f "cuda_8.0.61_375.26_linux-run" ]; then 
