@@ -53,7 +53,7 @@ sudo pip3 install --upgrade pip
 
 #sudo pip3 install -U https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
 sudo pip3 install --upgrade tensorflow-gpu
-sudo apt-get install jupyter-core
+sudo apt-get -y install jupyter-core
 sudo -H pip3 install notebook --upgrade
 cd $HOME
 mkdir SSL && cd SSL
