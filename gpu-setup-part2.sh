@@ -59,7 +59,7 @@ sudo pip3 install --upgrade pip
 # export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.0.1-cp27-none-linux_x86_64.whl
 
 sudo pip3 install -U tensorflow-gpu
-pip3 install -U jupyter
+sudo apt install jupyter-notebook jupyter-core
 
 echo "Script done"
 
