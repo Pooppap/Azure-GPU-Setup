@@ -61,6 +61,7 @@ sudo pip3 install --upgrade pip
 sudo pip3 install -U tensorflow-gpu
 sudo apt-get install jupyter-core
 sudo -H pip3 install notebook --upgrade
+sudo apt-get -y install software-properties-common && sudo add-apt-repository -y ppa:certbot/certbot && sudo apt-get update && sudo apt-get -y install certbot
 
 echo "Script done"
 
