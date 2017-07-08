@@ -18,14 +18,6 @@ if [ ! -f "cudnn-8.0-linux-x64-v5.1.tgz" ]; then
     exit
 fi
 
-echo "Installing CUDA toolkit and samples"
-# install cuda toolkit
-if [ ! -f "cuda_8.0.61_375.26_linux-run" ]; then
-	echo "CUDA installation file not found. Did you run part 1?"
-	exit
-fi
-sudo sh cuda_8.0.61_375.26_linux-run --silent --verbose --driver --toolkit
-
 echo "Uncompressing cudnn"
 tar xzvf cudnn-8.0-linux-x64-v5.1.tgz
 sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include/
@@ -35,7 +27,8 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 # update bashrc
 echo "Updating bashrc"
 echo >> $HOME/.bashrc '
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/usr/local/cuda
 '
 
@@ -58,9 +51,11 @@ sudo pip3 install --upgrade pip
 # install tensorflow 1.0
 # export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
 
-sudo pip3 install -U https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
+#sudo pip3 install -U https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
+sudo pip3 install --upgrade tensorflow-gpu
 sudo apt-get install jupyter-core
 sudo -H pip3 install notebook --upgrade
+cd $HOME
 mkdir SSL && cd SSL
 openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
 
