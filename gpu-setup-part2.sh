@@ -62,5 +62,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycer
 cd $HOME/Azure-GPU-Setup
 python3 gpu-test.py
 
+cd $HOME && mkdir Angel
+
 echo "Script done"
 
