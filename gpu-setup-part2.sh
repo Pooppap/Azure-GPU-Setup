@@ -56,9 +56,9 @@ sudo apt-get -y install libcupti-dev
 sudo pip3 install --upgrade pip
 
 # install tensorflow 1.0
-# export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.0.1-cp27-none-linux_x86_64.whl
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
 
-sudo pip3 install -U tensorflow-gpu
+sudo pip3 install -U TF_BINARY_URL
 sudo apt-get install jupyter-core
 sudo -H pip3 install notebook --upgrade
 mkdir SSL && cd SSL
