@@ -55,7 +55,7 @@ sudo pip3 install --upgrade pip
 sudo pip3 install --upgrade tensorflow-gpu
 sudo apt-get -y install jupyter-core
 sudo -H pip3 install notebook --upgrade
-cd $HOME
+cd $HOME/.jupyter
 mkdir SSL && cd SSL
 openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
 
