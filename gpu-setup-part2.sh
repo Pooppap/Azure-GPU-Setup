@@ -57,7 +57,7 @@ sudo apt-get -y install jupyter-core
 sudo -H pip3 install notebook --upgrade
 cd $HOME/.jupyter
 mkdir SSL && cd SSL
-openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mykey.key -out mycert.pem
+openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout mykey.key -out mycert.pem
 
 cd $HOME/Azure-GPU-Setup
 python3 gpu-test.py
